@@ -25,14 +25,13 @@ static void WindowSizeCallback(GLFWwindow* pt_w, int widht, int heigth)
 
 int main(void)
 {
-
     /* Initialize the library */
     if (!glfwInit())
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
     
-    GLFWwindow* pt_window = glfwCreateWindow(window_SizeX, window_SizeY, "Hello World", nullptr, nullptr);
+    GLFWwindow* pt_window = glfwCreateWindow(window_SizeX, window_SizeY, "Hello World", glfwGetPrimaryMonitor(), nullptr);
     if (!pt_window)
     {
         glfwTerminate();
