@@ -8,6 +8,12 @@
 int window_SizeX = 640;
 int window_SizeY = 480;
 
+float points[] = {
+     0.0f, 0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+     -0.5f, -0.5f, 0.0f
+};
+
 static void EscKeyCallback(GLFWwindow* pt_w, int key, int scancode, int action, int mode)
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
@@ -31,7 +37,7 @@ int main(void)
 
     /* Create a windowed mode window and its OpenGL context */
     
-    GLFWwindow* pt_window = glfwCreateWindow(window_SizeX, window_SizeY, "Hello World", glfwGetPrimaryMonitor(), nullptr);
+    GLFWwindow* pt_window = glfwCreateWindow(window_SizeX, window_SizeY, "Hello World", nullptr, nullptr);
     if (!pt_window)
     {
         glfwTerminate();
